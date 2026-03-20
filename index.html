@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiya Sorathiya – Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f9f7f4;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --muted: #6b6b6b;
+      --accent: #2d6a4f;
+      --accent-light: #d8f3dc;
+      --border: #e8e3dc;
+      --tag-bg: #f0ede8;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(249,247,244,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 24px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      transition: all 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 800px;
+      margin: 80px auto 0;
+      padding: 0 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-tag {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 4px 12px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.1s;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.2s;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      font-weight: 300;
+      margin-top: 16px;
+      max-width: 520px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.35s;
+    }
+
+    .hero-divider {
+      width: 56px;
+      height: 3px;
+      background: var(--accent);
+      margin-top: 28px;
+      border-radius: 2px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.45s;
+    }
+
+    /* ── SECTIONS ── */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 32px 80px;
+    }
+
+    section {
+      margin-top: 80px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.5s;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      background: var(--tag-bg);
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 400;
+      padding: 7px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+      cursor: default;
+    }
+
+    .skill-tag:hover {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* ── EDUCATION ── */
+    .edu-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 16px;
+      transition: box-shadow 0.2s;
+    }
+
+    .edu-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+    }
+
+    .edu-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .edu-card .institution {
+      font-size: 0.92rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    .edu-card .year {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* ── ABOUT ── */
+    .about-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .about-box p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* ── PROJECTS ── */
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 16px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+      transform: translateY(-2px);
+    }
+
+    .project-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.7;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .project-tags span {
+      font-size: 0.75rem;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 3px 10px;
+      border-radius: 10px;
+    }
+
+    /* ── CONTACT ── */
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+    }
+
+    .contact-box p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .contact-form textarea {
+      min-height: 110px;
+    }
+
+    .btn-send {
+      align-self: flex-start;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .btn-send:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    .toast {
+      display: none;
+      margin-top: 12px;
+      font-size: 0.88rem;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 10px 16px;
+      border-radius: 8px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      padding: 32px;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    section:nth-child(1) { animation-delay: 0.5s; }
+    section:nth-child(2) { animation-delay: 0.6s; }
+    section:nth-child(3) { animation-delay: 0.7s; }
+    section:nth-child(4) { animation-delay: 0.8s; }
+    section:nth-child(5) { animation-delay: 0.9s; }
+
+    @media (max-width: 600px) {
+      .hero, .container { padding: 0 20px; }
+      nav { gap: 4px; }
+      nav a { padding: 5px 10px; font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="hero-tag">Portfolio &amp; Resume</span>
+    <h1>Jiya<br>Sorathiya</h1>
+    <p class="hero-sub">
+      BBA Student · Digital Business &amp; Entrepreneurship · IIM Bangalore
+    </p>
+    <div class="hero-divider"></div>
+  </div>
+
+  <div class="container">
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-label">About Me</div>
+      <div class="about-box">
+        <p>
+          I am a student from Ahmedabad, born in 2008, currently pursuing BBA in Digital Business and Entrepreneurship (DBE) from IIM Bangalore. I am passionate about building things from the ground up — whether that's a business, a website, or an idea. I enjoy solving problems creatively and believe in learning by doing.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-label">Skills</div>
+      <div class="skills-grid">
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">Problem Solving</span>
+        <span class="skill-tag">Teamwork</span>
+        <span class="skill-tag">Communication</span>
+        <span class="skill-tag">Entrepreneurial Thinking</span>
+        <span class="skill-tag">Digital Business</span>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="section-label">Education</div>
+
+      <div class="edu-card">
+        <h3>BBA — Digital Business &amp; Entrepreneurship (DBE)</h3>
+        <div class="institution">Indian Institute of Management (IIM), Bangalore</div>
+        <div class="year">2025 – Present</div>
+      </div>
+
+      <div class="edu-card">
+        <h3>Higher Secondary — 12th Grade</h3>
+        <div class="institution">Gandhidham, Gujarat</div>
+        <div class="year">Percentage: 70%</div>
+      </div>
+
+      <div class="edu-card">
+        <h3>Secondary — 10th Grade</h3>
+        <div class="institution">Gandhidham, Gujarat</div>
+        <div class="year">Percentage: 75%</div>
+      </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-label">Projects</div>
+
+      <div class="project-card">
+        <h3>₹250 Venture</h3>
+        <p>Started a small business from scratch with just ₹250 as seed capital. This project was an exercise in resourcefulness, creativity, and understanding real-world entrepreneurship — from ideation to execution with minimal resources.</p>
+        <div class="project-tags">
+          <span>Entrepreneurship</span>
+          <span>Business</span>
+          <span>Problem Solving</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Personal Resume Website</h3>
+        <p>Designed and built a fully responsive personal portfolio and resume website using HTML and CSS. Covers sections for skills, education, projects, and a contact form — hosted on GitHub Pages.</p>
+        <div class="project-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>GitHub Pages</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-label">Contact Me</div>
+      <div class="contact-box">
+        <p>Feel free to reach out — whether it's about a project, a collaboration, or just to connect. I'll get back to you at <strong>jiyasorathiya01@gmail.com</strong></p>
+        <div class="contact-form">
+          <input type="text" placeholder="Your name" id="senderName" />
+          <input type="email" placeholder="Your email address" id="senderEmail" />
+          <textarea placeholder="Your message..." id="senderMsg"></textarea>
+          <button class="btn-send" onclick="sendMessage()">Send Message</button>
+          <div class="toast" id="toast">✓ Opening your mail app...</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    © 2026 Jiya Sorathiya &nbsp;·&nbsp; Built with HTML &amp; CSS
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+      });
+      navLinks.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+      });
+    });
+
+    function sendMessage() {
+      const name = document.getElementById('senderName').value.trim();
+      const email = document.getElementById('senderEmail').value.trim();
+      const msg  = document.getElementById('senderMsg').value.trim();
+      if (!name || !email) {
+        alert('Please fill in your name and email.');
+        return;
+      }
+      const subject = encodeURIComponent('Message from ' + name);
+      const body    = encodeURIComponent(msg + '\n\nFrom: ' + name + '\nReply to: ' + email);
+      window.location.href = 'mailto:jiyasorathiya01@gmail.com?subject=' + subject + '&body=' + body;
+      document.getElementById('toast').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
