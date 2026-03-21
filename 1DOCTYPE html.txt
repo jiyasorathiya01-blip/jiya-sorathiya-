@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jiya Sorathiya</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4fdf7;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background-color: #1e7e34;
+      color: white;
+      padding: 30px;
+    }
+
+    header h1 {
+      font-size: 46px;
+      margin: 0;
+    }
+
+    header p {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section h2 {
+      font-size: 24px;
+      color: #1e7e34;
+      margin-bottom: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Skills Box Style (previous one) */
+    .skills-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-box {
+      background-color: #eafaf1;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 18px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Jiya Sorathiya</h1>
+    <p>Portfolio | Resume</p>
+  </header>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>Intro</h2>
+      <div class="card">
+        <p>
+          I'm a passionate student learning web development | Future Entrepreneur | Digital Business Enthusiast
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>About Me</h2>
+      <div class="card">
+        <p>
+          I am a student from Ahmedabad, born in 2008, currently pursuing BBA in Digital and Entrepreneurship (DBE) from IIM Bangalore. 
+          I enjoy learning new things, building websites, and exploring new ideas.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>My Skills</h2>
+      <div class="card skills-container">
+        <div class="skill-box">Teamwork</div>
+        <div class="skill-box">HTML</div>
+        <div class="skill-box">CSS</div>
+        <div class="skill-box">Communication</div>
+        <div class="skill-box">Creativity</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Education</h2>
+      <div class="card">
+        <p>Atmiya Vidyapeeth, Gandhidham</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Projects</h2>
+      <div class="card">
+        <p>
+          Resume Website - Creating a resume using HTML and CSS<br><br>
+          250 Rupee Venture - Starting a business using 250 rupees
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>
+          Email: your-email@example.com<br>
+          Phone: +91 XXXXX XXXXX
+        </p>
+        <button onclick="contactMsg()">Say Hi</button>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026
+  </footer>
+
+  <script>
+    function contactMsg() {
+      alert("Thanks for visiting my website");
+    }
+  </script>
+
+</body>
+</html>
