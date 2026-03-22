@@ -1,0 +1,120 @@
+Updated Resume Website Code
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yuvi Vivek Somani - Resume</title>
+    <style>
+        /* CSS styling using core principles from the sources */
+        body {
+            font-family: sans-serif; /* Recommended for digital screens and tech [1] */
+            line-height: 1.6; /* Enhances readability [3] */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Neutral background to reduce cognitive load [4] */
+            color: #333; /* High contrast for accessibility [4] */
+        }
+
+        header {
+            background-color: #004a99; /* Blue signals trust and reliability in tech [5] */
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px; /* Primary heading for visual hierarchy [6, 7] */
+        }
+
+        .tagline {
+            font-size: 20px;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            font-size: 16px;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px; /* Limits line length for better reading [8] */
+            margin: auto; /* Centers the content block */
+            background-color: white;
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd; /* Subtle separation of content [9] */
+        }
+
+        h2 {
+            color: #004a99;
+            font-size: 24px; /* Medium size for subheadings [6] */
+            border-left: 5px solid #004a99;
+            padding-left: 10px;
+        }
+
+        ul {
+            list-style-type: square; /* Unordered list for non-sequential items [10] */
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Semantic HTML structure [11] -->
+    <header>
+        <h1>Yuvi Vivek Somani</h1>
+        <p class="tagline">Aspiring Web Developer</p>
+        <div class="contact-info">
+            <p>Phone: 97279573xx | Email: somaniyuvi25@gmail.com</p>
+            <p>Location: Ahmedabad, Gujarat</p>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Education</h2>
+            <ul>
+                <li><strong>BBA DBE:</strong> 1st Year Student</li>
+                <li><strong>12th Grade:</strong> 92%</li>
+                <li><strong>10th Grade:</strong> 92%</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Hobbies</h2>
+            <ul>
+                <li>Kathak</li>
+                <li>Handball</li>
+                <li>Table Tennis</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Yuvi Vivek Somani</p>
+    </footer>
+
+</body>
+</html>
